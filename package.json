@@ -1,0 +1,71 @@
+{
+  "name": "vue-multi-dialog",
+  "license": "MIT",
+  "keywords": [
+    "dialog",
+    "vue",
+    "vue-multi-dialog"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AmirhosseinSrv/vue-multi-dialog.git"
+  },
+  "homepage": "https://github.com/AmirhosseinSrv/vue-multi-dialog",
+  "version": "1.0.1",
+  "packageManager": "^pnpm@8.6.6",
+  "scripts": {
+    "dev": "vite",
+    "clean": "rm -rf dist",
+    "copy": "cp ./src/index.css ./dist && cp ./package.json ./dist && cp ./README.md ./dist",
+    "build": "pnpm run clean && vite build && vue-tsc --declaration --emitDeclarationOnly && pnpm run copy",
+    "serve": "vite preview"
+  },
+  "type": "module",
+  "main": "dist/core.umd.js",
+  "unpkg": "dist/core.iife.js",
+  "jsdelivr": "dist/core.iife.js",
+  "module": "dist/core.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/core.es.js",
+      "require": "./dist/core.umd.js"
+    },
+    "./style.css": {
+      "default": "./dist/style.css"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@vueuse/core": "^10.11.0",
+    "tailwind-variants": "^0.2.1"
+  },
+  "devDependencies": {
+    "@babel/types": "^7.24.9",
+    "@types/node": "^20.14.11",
+    "@types/web-bluetooth": "^0.0.20",
+    "@typescript-eslint/eslint-plugin": "^7.16.1",
+    "@typescript-eslint/parser": "^7.16.1",
+    "@vitejs/plugin-vue": "^5.0.5",
+    "autoprefixer": "^10.4.19",
+    "eslint": "^9.7.0",
+    "@eslint/js": "^9.7.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-vue": "^9.27.0",
+    "globals": "^15.8.0",
+    "postcss": "^8.4.39",
+    "prettier": "^3.3.3",
+    "tailwindcss": "^3.4.6",
+    "tailwindcss-dir": "^4.0.0",
+    "tailwindcss-rtl": "^0.9.0",
+    "typescript": "^5.5.3",
+    "typescript-eslint": "^7.16.1",
+    "vite": "^5.3.4",
+    "vue": "^3.4.33",
+    "vue-eslint-parser": "^9.4.3",
+    "vue-tsc": "^2.0.26"
+  }
+}
